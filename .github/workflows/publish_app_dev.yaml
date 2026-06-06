@@ -79,7 +79,7 @@ jobs:
 
       - run: echo "✅ APK build finished."
   build-windows:
-    runs-on: windows-latest
+    runs-on: windows-2025-vs2026
     permissions:
       contents: write
     steps:
@@ -109,7 +109,7 @@ jobs:
           flutter_distributor package --platform windows --targets msix,zip --skip-clean
       # 上传Windows至Artifacts
       - name: Upload Windows APP to Artifacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: windows
           path: |
