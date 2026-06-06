@@ -118,8 +118,8 @@ jobs:
         with:
           name: windows
           path: |
-            **/*.msix
-            **/*.zip
+            simple_live_app/dist/**/*.msix
+            simple_live_app/dist/**/*.zip
         #完成
       - run: echo "🍏 Windows job's status is ${{ job.status }}."
 
