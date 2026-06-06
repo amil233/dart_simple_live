@@ -106,12 +106,6 @@ jobs:
         run: |
           cd simple_live_app
           flutter_distributor package --platform windows --targets msix,zip --skip-clean
-      - name: Locate generated artifacts
-        run: |
-          Write-Host "Searching for .msix and .zip files in whole workspace..."
-          Get-ChildItem -Path ${{ github.workspace }} -Recurse -File -Include *.msix, *.zip |
-            ForEach-Object { Write-Host $_.FullName }
-        shell: pwsh
       # 上传Windows至Artifacts
       - name: Upload Windows APP to Artifacts
         uses: actions/upload-artifact@v6
